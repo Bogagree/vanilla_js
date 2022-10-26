@@ -23,6 +23,12 @@ const promise2 = new Promise((res, rej) => {
     return console.log("Promise Data")
 })
 
+// or
+
+let p2 = new Promise( (res) => {
+    res('Promise Data')
+} ).then((data)=>console.log(data))
+
 // Task 03
 // Создайте промис, который после создания сразу же переходит в состояние rejected
 // и возвращает строку 'Promise Error'
@@ -43,6 +49,7 @@ promise3
 // (Используйте setTimeout)
 // и возвращает строку 'Promise Data'
 // Получите данные промиса и выведите их в консоль
+
 const promise4 = new Promise((res, rej) => {
     setTimeout(() => {
         res(console.log("Promise data 3s"))
@@ -73,7 +80,8 @@ const handlePromise = {
 
 const onCreatePromiseBtnClick = () => {
 
-        handlePromise.promise = new Promise((res, rej) => {})
+    handlePromise.promise = new Promise((res, rej) => {
+    })
 
 }
 
@@ -91,3 +99,10 @@ const onCreatePromiseBtnClick = () => {
 // второй промис возвращает объект {age: 16} через 3 с, а третий {city: ''} через 4с.
 // Получите результаты работы промисов, объедините свойства объектов
 // и выведите в консоль {name, age, city}
+
+
+// подготовка к собесам на хабре: https://habr.com/ru/post/486820/
+
+function clickFunc(event) {
+    console.log(event.currentTarget)
+}
