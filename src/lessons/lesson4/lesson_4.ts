@@ -1,9 +1,3 @@
-const Lesson4 = () => {};
-
-export default Lesson4;
-
-console.log(123)
-
 console.log('lesson 4');
 
 // http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D
@@ -16,7 +10,7 @@ console.log('lesson 4');
 
 const promise = new Promise((res, rej) => {
     console.log("Promise is created")
-    // промис находиться в состоянии pending потому что ничего не возвращает, т.е. он
+    //     // промис находиться в состоянии pending потому что ничего не возвращает, т.е. он
 })
 
 // Task 02
@@ -24,21 +18,25 @@ const promise = new Promise((res, rej) => {
 // и возвращает строку 'Promise Data'
 // Получите данные промиса и выведите их в консоль
 
-const promise2 = new Promise((res, rej) => {
-    const getData = (data: any, err: any) => {
-        if (err) {
-            console.log('New Error')
-        } else {
-            console.log("Promise data")
-            return data
-        }
-    }
-})
+// const promise2 = new Promise((res, rej) => {
+//     const getData = (data, err) => {
+//         if (err) {
+//             console.log('New Error')
+//         } else {
+//             console.log("Promise data")
+//             return data
+//         }
+//     }
+// })
 
 // Task 03
 // Создайте промис, который после создания сразу же переходит в состояние rejected
 // и возвращает строку 'Promise Error'
 // Получите данные промиса и выведите их в консоль
+
+const promiseTask3 = new Promise((res, rej) => {
+    rej()
+}).catch((err) => console.log('Promise Error'))
 
 
 // Task 04
