@@ -21,3 +21,33 @@ function App() {
 };
 
 export default App;
+
+// import { useMemo } from "react";
+// import { User } from "./user.js";
+// import * as ga from "./ga";
+//
+// const UserList = ({ userList, isNeedFilter }) => {
+//     const preparedUserList = isNeedFilter
+//         ? useMemo(() => [...userList].sort(), [userList])
+//         : userList;
+//
+//     const onClickHandler = useCallback(() => ga.clickUser(),[])
+//
+//     const style = useMemo(() => {
+//         width: "100px",
+//     }, [])
+//
+//     return (
+//         <>
+//             {preparedUserList.map((user) => (
+//                 <User
+//                     {...user}
+//                     key={user}
+//                     style={style}
+//                     onClick={onClickHandler}
+//                 />
+//             ))}
+//         </>
+//     );
+// };
+
