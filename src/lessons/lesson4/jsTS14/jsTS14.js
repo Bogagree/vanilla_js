@@ -115,6 +115,22 @@ const repo = {
             }
         })
         return promise
+    },
+    read() {
+        const data = localStorage.getItem('some-key')
+        if (!data) {
+            return null
+        } else {
+            return JSON.parse(data)
+        }
+    },
+    readAsync() {
+        return new Promise((res, rej) => {
+            const data = localStorage.getItem('some-key')
+            if (!data) {
+                res(null)
+            } else res(JSON.parse(data))
+        })
     }
 }
 
@@ -135,9 +151,13 @@ if (result) {
 //     .catch( error => console.log( 'NOT SAVED' + error ))
 
 const runAsync = async () => {
-await repo.saveAsync({name: 'async data'})
+    await repo.saveAsync({name: 'async data'})
     console.log('Saved async')
+
+    const data = await repo.readAsync()
+    console.log(data)
 }
 
+runAsync()
 
 console.log('============================')

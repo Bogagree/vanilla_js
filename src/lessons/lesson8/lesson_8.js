@@ -94,17 +94,17 @@ const tree2 = {
 	value: 1,
 	children: [
 		{
-			value: 2,
+			currentCount: 2,
 			children: [
-				{ value: 4 },
-				{ value: 5 },
+				{ currentCount: 4 },
+				{ currentCount: 5 },
 			]
 		},
 		{
-			value: 3,
+			currentCount: 3,
 			children: [
-				{ value: 6 },
-				{ value: 7 },
+				{ currentCount: 6 },
+				{ currentCount: 7 },
 			]
 		}
 	]
