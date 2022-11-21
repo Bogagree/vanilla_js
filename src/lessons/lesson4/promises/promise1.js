@@ -36,21 +36,3 @@ a.sum(1, 2)
 
 
 
-
-// const sleep = (ms) => {
-//     return new Promise((resolve) => {
-//         setTimeout(() => {
-//             resolve()
-//         }, ms)
-//     })
-// }
-//
-// async function abc() {
-//     foo(console.log);
-//     await sleep(1000)
-//     bar(console.log);
-//     await sleep(1000)
-//     baz(console.log);
-// }
-//
-// abc()

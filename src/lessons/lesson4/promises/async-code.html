@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>async-code</title>
+</head>
+<body>
+
+<h1>Async-code занятие с Димычем</h1>
+
+
+<script>
+    let fetch = (url) => { // самописный fetch для практики
+
+        return new Promise((res, rej) => {
+            switch (url) {
+                case 'google': {
+                    setTimeout(() => { // XMLHttpRequest - объект с помощью которого делается запрос на сервер
+                        res({data: 'from google'})
+                    }, 1000)
+                    break
+                }
+                case 'microsoft': {
+                    setTimeout(() => {
+                        res({data: 'from microsoft'})
+                    }, 2000)
+                    break
+                }
+                case 'it-kamasutra': {
+                    setTimeout(() => {
+                        res({data: 'it-kamasutra'})
+                    }, 500)
+                    break
+                }
+                default:
+                    setTimeout(() => {
+                        res({data: 'from unknown resource '})
+                    }, 4000)
+            }
+        })
+    }
+
+    // последовательные запросы через then
+    // fetch('microsoft')
+    //     .then(data => {
+    //         console.log(data)
+    //         return fetch('google')
+    //     })
+    //     .then(data => {
+    //         console.log(data)
+    //         return fetch('it-kamasutra')
+    //     })
+    //     .then(data => console.log(data))
+
+    // const makeRequests = async () => {
+    //     let data1 = await fetch('microsoft')
+    //     console.log(data1)
+    //
+    //     let data2 = await fetch('google')
+    //     console.log(data2)
+    //
+    //     let data3 = await fetch('it-kamasutra')
+    //     console.log(data3)
+    // }
+    //
+    // makeRequests()
+
+
+    const makeRequestAtTheOneMoment = () => {
+        debugger
+        Promise.all([
+            fetch('microsoft'),
+            fetch('google'),
+            fetch('it-kamasutra')
+        ])
+            .then(data => {
+                debugger
+                console.log('all finished')
+            })
+    }
+
+    makeRequestAtTheOneMoment()
+
+</script>
+
+</body>
+</html>
