@@ -7,7 +7,7 @@ const sortedNewArr = (arr) => {
     const obj = arr.reduce((acc,el) => {
         // const currCount = acc[el] || 0;
         // return {...acc, [el]: currCount + 1 }
-        acc[el] = (acc[el] ) + 1
+        acc[el] = (acc[el] || 0 ) + 1
         return acc
     }, {} )
     console.log(obj)
